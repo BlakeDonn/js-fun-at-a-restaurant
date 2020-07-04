@@ -5,18 +5,24 @@ function takeOrder(order1, deliveryOrders){
 }
 };
 function refundOrder(remove, deliveryOrders){
-  for (i = 0; i < deliveryOrders.length; i++){
-    if (deliveryOrders[i].orderNumber === remove){
-      deliveryOrders.splice( deliveryOrders.indexOf(deliveryOrders[i]), 1);
-        }
-      }
+      deliveryOrders.shift(remove)
     };
+
 function listItems(deliveryOrders){
-    for(i = 0; i < deliveryOrders.length; i++){
-    var deliveryOrders = deliveryOrders.push(deliveryOrders[i].item)
-      return deliveryOrders;
+    var items = `${deliveryOrders[0].item}, ${deliveryOrders[1].item}, ${deliveryOrders[2].item}`                                            // pull items from order objects
+    return items
+    }                                               // add items to a string
+function searchOrder(deliveryOrders, order){
+    if (deliveryOrders[0].item == order){
+      var inList = true;
+    }else{
+      inList = false;
     }
-    }
+    return inList;
+}
+
+
+
 
 
 
@@ -25,8 +31,19 @@ module.exports = {
   takeOrder,
   refundOrder,
   listItems,
-  // searchOrder
+  searchOrder
 }
+
+
+// if (deliveryOrders[i].item.length < 20){
+//   deliveryOrders.push(deliveryOrders[i].item);
+
+
+// for (i = 0; i < deliveryOrders.length; i++){
+//   if (deliveryOrders[i].orderNumber === remove){
+//     deliveryOrders.splice( deliveryOrders.indexOf(deliveryOrders[i]), 1);
+
+// return deliveryOrders.filter(order => deliveryOrders[i].item.length < 20)
 
 
 ///if (deliveryOrders[i].orderNumber === remove){

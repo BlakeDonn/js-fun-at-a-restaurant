@@ -35,4 +35,3 @@ module.exports = {
   decreasePrice,
   createRecipe
 }
-//(ingredients.indexOf(ingredient) === -1){

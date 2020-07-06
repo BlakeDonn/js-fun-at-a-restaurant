@@ -33,24 +33,3 @@ module.exports = {
   listItems,
   searchOrder
 }
-
-
-// if (deliveryOrders[i].item.length < 20){
-//   deliveryOrders.push(deliveryOrders[i].item);
-
-
-// for (i = 0; i < deliveryOrders.length; i++){
-//   if (deliveryOrders[i].orderNumber === remove){
-//     deliveryOrders.splice( deliveryOrders.indexOf(deliveryOrders[i]), 1);
-
-// return deliveryOrders.filter(order => deliveryOrders[i].item.length < 20)
-
-
-///if (deliveryOrders[i].orderNumber === remove){
-///deliveryOrders.splice([i, 1]);
-
-///deliveryOrders.filter(deliveryOrders.forEach({orderNumber}[remove]);
-
-
-// if (deliveryOrders[i].orderNumber === remove){
-//   deliveryOrders = deliveryOrders.filter(deliveryOrders[i]);

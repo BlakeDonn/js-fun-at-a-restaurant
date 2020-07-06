@@ -11,30 +11,141 @@ function createRestaurant(name, menu){
   }
 
   function addMenuItem(rest, item){
-      if (item.type == 'breakfast' && item != rest.menus.breakfast[0] ){
-        rest.menus.breakfast.push(item)
-      }
-      if (item.type == 'lunch' && item != rest.menus.lunch[0] ) {
-        rest.menus.lunch.push(item)
-      }
-      if (item.type == 'dinner' && item != rest.menus.dinner[0] ) {
-        rest.menus.dinner.push(item)
-      }
-      return
-}
+    if (!rest.menus[item.type].includes(item)){
+      rest.menus[item.type].push(item)
+    }
+
+ }
   function removeMenuItem(rest, item, name){
-        if (rest.menus.breakfast[0].name == item){
-          rest.menus.breakfast.pop();
-          return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      if (name){
+        for (i = 0; i < rest.menus[name].length; i++){
+          if (rest.menus[name][i].name == item){
+            rest.menus[name].splice(item,1);
+          }
         }
-        if (rest.menus.lunch[0].name == item){
-          rest.menus.lunch.pop();
-          return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
-        }
-        if (rest.menus.dinner[0].name == item){
-          rest.menus.dinner.pop();
-          return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
-        }
+        return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      }
+      else {
+        return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+      }
+      }
+
+
+
+
+module.exports = {
+  createRestaurant,
+  addMenuItem,
+  removeMenuItem
+}
+
+//     rest.menus[name].splice(item,1);
+//     return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+//   }
+//     else {
+//       return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+//     }
+// }
+
+
+
+
+
+
+// console.log(rest.menus.breakfast);
+// if (item.type == 'breakfast' && item != rest.menus.breakfast[0] ){
+//     rest.menus.breakfast.push(item)
+//   }
+//   if (item.type == 'lunch' && item != rest.menus.lunch[0] ) {
+//     rest.menus.lunch.push(item)
+//   }
+//   if (item.type == 'dinner' && item != rest.menus.dinner[0] ) {
+//     rest.menus.dinner.push(item)
+//   }
+//   return
+
+
+ //   if (typeof rest.menus.breakfast[0] != undefined && rest.menus.breakfast[0].name == item){
+ //     rest.menus.breakfast.pop();
+ //     return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+ //    }
+ //   if (typeof rest.menus.lunch[0] != undefined && rest.menus.lunch[0].name == item){
+ //     rest.menus.lunch.pop();
+ //     return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+ //    }
+ //   if (typeof rest.menus.dinner[0] != undefined && rest.menus.dinner[0].name == item){
+ //     rest.menus.dinner.pop();
+ //     return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+ //    }
+ //   else {
+ //     return  `Sorry, we don't sell ${item}, try adding a new recipe!`;
+ // }
+
+
+
+
+
+      // if (Object.values(rest.menus.breakfast).indexOf(item) > -1){
+      // return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+      // }
+      // if (Object.values(rest.menus.breakfast).indexOf(item){
+      // rest.menus.breakfast.pop();
+      // }
+      // return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      // // }
+      // if (rest.menus.lunch[0].name == item){
+      // rest.menus.lunch.pop();
+      // return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      // }
+      // if (rest.menus.dinner[0].name == item){
+      // rest.menus.dinner.pop();
+      // return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      // }
+
+
+
+    // if (rest.menus.breakfast == []){
+    // return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+    // }
+    // if (rest.menus.lunch == []){
+    // return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+    // }
+    // if (rest.menus.dinner == []){
+    // return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+    // }
+
+
+
+
+
+
+
+
+//       if (Object.values(rest.menus.lunch[0]) == item){
+//         rest.menus.lunch.pop();
+//         return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+//       } else{
+//         return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+//       }
+//       if (Object.values(rest.menus.dinner[0]) == item){
+//         rest.menus.dinner.pop();
+//         return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+//       } else{
+//         return `Sorry, we don't sell ${item}, try adding a new recipe!`;
+// }
+
+
+
+      // }
+      // if (rest.menus.lunch[0].name == item){
+      //   rest.menus.lunch.pop();
+      //   return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      // }
+      // if (rest.menus.dinner[0].name == item){
+      //   rest.menus.dinner.pop();
+      //   return `No one is eating our ${item} - it has been removed from the ${name} menu!`;
+      // }
+
 
 
 
@@ -45,22 +156,16 @@ function createRestaurant(name, menu){
 
 
 
-      // if (rest.menus.lunch[0] == item && rest.menus.lunch[2] == name){
-      //   rest.menus.lunch.pop();
-      // }
-      // if (rest.menus.dinner[0] == item && rest.menus.dinner[2] == name){
-      //   rest.menus.dinner.pop();
-      // }
-
-  }
+    // if (rest.menus.lunch[0] == item && rest.menus.lunch[2] == name){
+    //   rest.menus.lunch.pop();
+    // }
+    // if (rest.menus.dinner[0] == item && rest.menus.dinner[2] == name){
+    //   rest.menus.dinner.pop();
+    // }
 
 
 
-module.exports = {
-  createRestaurant,
-  addMenuItem,
-  removeMenuItem
-}
+
 
 
 // for(i = 0; i < rest.menus.length; i++){  // evaluate object.type
